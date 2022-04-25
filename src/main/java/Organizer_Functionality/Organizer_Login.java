@@ -1,11 +1,15 @@
 // importing all dependencies and packages
 package Organizer_Functionality;
 
+import Utilities.DriverFetch;
+import Utilities.ScreenShot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static Utilities.DriverFetch.getDriver;
 
 
 // Creating class for organizer login
@@ -43,6 +47,7 @@ public class Organizer_Login {
             actions.sendKeys(password,"12345@django").perform();
             actions.pause(2000).perform();
             actions.click(loginButton).perform();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();

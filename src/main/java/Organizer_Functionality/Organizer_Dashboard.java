@@ -1,12 +1,14 @@
 // importing all necessary dependencies and packages
 package Organizer_Functionality;
 
+import Utilities.ScreenShot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static Utilities.DriverFetch.getDriver;
 
 // Declaring the class Organizer_Functionality.Organizer_Dashboard
 public class Organizer_Dashboard {
@@ -73,6 +75,7 @@ public class Organizer_Dashboard {
             String[] textHeaderDivision = textHeader.split(", ");
             String organiserName = textHeaderDivision[1];
             if(organiserName.equals("lohithvarma")) {
+                ScreenShot.Shot(getDriver());
                 return true;
             }else {
                 return false;
@@ -91,6 +94,7 @@ public class Organizer_Dashboard {
             int totalUser = Integer.parseInt(users.getText());
             int adminUser = Integer.parseInt(admin.getText());
             if(employeesUser + organizerUser + adminUser == totalUser) {
+                ScreenShot.Shot(getDriver());
                 return true;
             }else {
                 return false;
@@ -106,6 +110,7 @@ public class Organizer_Dashboard {
         try {
             profileIcon.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -118,6 +123,7 @@ public class Organizer_Dashboard {
         try {
             profile_Detail_Button.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -139,8 +145,5 @@ public class Organizer_Dashboard {
             return false;
         }
     }
-
-
-
 
 }

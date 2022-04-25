@@ -1,12 +1,14 @@
 // importing all necessary dependencies and packages
 package Organizer_Functionality;
 
+import Utilities.ScreenShot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import static Utilities.DriverFetch.getDriver;
 
 // Declaring the class Organizer_Functionality.Manage_quiz
 public class Manage_quiz {
@@ -47,7 +49,8 @@ public class Manage_quiz {
            if(isPresentAddQuizText && isPresentListQuizzesText){
                System.out.println(checkAddQuizText+" button "+" and "+ checkListQuizzesText+" button are Present. So Manage Quiz button is working.");
            }
-           return true;
+            ScreenShot.Shot(getDriver());
+            return true;
         }catch (Exception e){
             e.fillInStackTrace();
             return false;
@@ -58,7 +61,7 @@ public class Manage_quiz {
     public boolean checkAddQuizOption(){
         try {
             String addQuizText = addQuiz.getText();
-            //Assert.assertEquals(addQuizText, checkAddQuizText,"Add Quiz Text does not match.");
+            Assert.assertEquals(addQuizText, checkAddQuizText,"Add Quiz Text does not match.");
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -70,7 +73,7 @@ public class Manage_quiz {
     public boolean checkListQuizzesOption(){
         try {
             String listQuizzesText = listQuizzes.getText();
-            //Assert.assertEquals(listQuizzesText,checkListQuizzesText,"List Quizzes Text does not match.");
+            Assert.assertEquals(listQuizzesText,checkListQuizzesText,"List Quizzes Text does not match.");
             return true;
         }catch (Exception e){
             e.fillInStackTrace();

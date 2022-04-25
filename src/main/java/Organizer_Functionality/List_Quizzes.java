@@ -1,10 +1,13 @@
 // importing all necessary dependencies and packages
 package Organizer_Functionality;
 
+import Utilities.ScreenShot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static Utilities.DriverFetch.getDriver;
 
 // Declaring the class Organizer_Functionality.List_Quizzes
 public class List_Quizzes {
@@ -35,6 +38,7 @@ public class List_Quizzes {
             Manage_quiz manageQuiz = new Manage_quiz(driver);
             manageQuiz.isManageQuizButtonCLicked();
             listQuizzes.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -46,6 +50,7 @@ public class List_Quizzes {
     public boolean isQuizNameClickable(){
         try {
             quizNameLink.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -57,6 +62,7 @@ public class List_Quizzes {
     public boolean isViewResultButtonClickable(){
         try {
             viewResultButton.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();

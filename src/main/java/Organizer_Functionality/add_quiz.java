@@ -1,6 +1,7 @@
 // importing all necessary dependencies and packages
 package Organizer_Functionality;
 
+import Utilities.ScreenShot;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.List;
+import static Utilities.DriverFetch.getDriver;
 
 
 // Declaring the class Organizer_Functionality.add_quiz
@@ -94,6 +95,7 @@ public class add_quiz {
             Thread.sleep(2000);
             Assert.assertTrue(isQuizAddedWithEnteringAllTheDetails(),"Quiz has not been created.");
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -105,6 +107,7 @@ public class add_quiz {
     public boolean isQuizAddedWithoutEnteringTheDetails(){
         try {
             saveButton.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -121,6 +124,7 @@ public class add_quiz {
             Thread.sleep(2000);
             saveButton.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -137,6 +141,7 @@ public class add_quiz {
             actions.sendKeys(typeOfInterest, Keys.ARROW_DOWN).perform();
             Thread.sleep(1000);
             actions.click(saveButton).perform();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -148,6 +153,7 @@ public class add_quiz {
     public boolean isAddQuestionButtonClickable(){
         try {
             addQuestionButton.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -159,10 +165,12 @@ public class add_quiz {
     public boolean isCancelButtonClickable(){
         try {
             cancelButton.click();
+            ScreenShot.Shot(getDriver());
             Thread.sleep(2000);
             Manage_quiz mangeQuizPage = new Manage_quiz(driver);
             mangeQuizPage.isManageQuizButtonCLicked();
             addQuizButton.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -178,6 +186,7 @@ public class add_quiz {
             addQuestionInput.sendKeys("Who is Famous FootBall Player?");
             Thread.sleep(2000);
             saveButton.click();
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -189,6 +198,7 @@ public class add_quiz {
     public boolean isOptionSaveWithoutEnteringOptions(){
         try {
             saveOptionButton.click();
+            ScreenShot.Shot(getDriver());
             Thread.sleep(2000);
             return true;
         }catch (Exception e){
@@ -204,6 +214,7 @@ public class add_quiz {
             Thread.sleep(2000);
             saveOptionButton.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -222,6 +233,7 @@ public class add_quiz {
             Thread.sleep(2000);
             saveOptionButton.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -240,6 +252,7 @@ public class add_quiz {
             Thread.sleep(2000);
             saveOptionButton.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -252,6 +265,7 @@ public class add_quiz {
         try {
             deleteButton.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -264,6 +278,7 @@ public class add_quiz {
         try {
             neverMind.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();
@@ -278,6 +293,7 @@ public class add_quiz {
             Thread.sleep(2000);
             yesIAmSure.click();
             Thread.sleep(2000);
+            ScreenShot.Shot(getDriver());
             return true;
         }catch (Exception e){
             e.fillInStackTrace();

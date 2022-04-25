@@ -11,17 +11,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenShot {
-    public String timestamp() {
+    public static String timestamp() {
         return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
     }
 
-    public void Shot(WebDriver driver, int ss) {
+    public static void Shot(WebDriver driver) {
 
         File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         try {
 
-            File dest = new File("C:\\Users\\vaibhavjain98\\Desktop\\test1\\Screenshots" + ss + timestamp() + ".png");
+            File dest = new File("C:\\Users\\vaibhavjain98\\Desktop\\test1\\Screenshots"  + timestamp() + ".png");
 
             FileUtils.copyFile(src, dest);
 
