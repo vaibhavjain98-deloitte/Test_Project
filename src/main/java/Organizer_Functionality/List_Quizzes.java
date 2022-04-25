@@ -61,6 +61,8 @@ public class List_Quizzes {
     //To check View Result Button is working or not
     public boolean isViewResultButtonClickable(){
         try {
+            isListQuizButtonClickable();
+            Thread.sleep(2000);
             viewResultButton.click();
             ScreenShot.Shot(getDriver());
             return true;
